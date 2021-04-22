@@ -1,14 +1,35 @@
 -- Database Queries
 
 -- Find all customers with postal code 1010
+SELECT * 
+FROM Customers
+WHERE PostalCode = '1010'
 
 -- Find the phone number for the supplier with the id 11
 
+SELECT * 
+FROM [Suppliers]
+WHERE SupplierID = '11'
+
 -- List first 10 orders placed, sorted descending by the order date
 
--- Find all customers that live in London, Madrid, or Brazil
+SELECT * 
+FROM [Orders]
+WHERE OrderDate
+ORDER BY OrderDate DESC;
 
--- Add a customer record for "The Shire", the contact name is "Bilbo Baggins" the address is -"1 Hobbit-Hole" in "Bag End", postal code "111" and the country is "Middle Earth"
+-- Find all customers that live in London, Madrid, or Brazil
+SELECT * 
+FROM [Customers]
+WHERE City = 'London'
+OR City = 'Madrid'
+OR City = 'Brazil';
+
+
+-- Add a customer record for "C", the contact name is "Bilbo Baggins" the address is -"1 Hobbit-Hole" in "Bag End", postal code "111" and the country is "Middle Earth"
+
+INSERT INTO [Suppliers] (SupplierID, SupplierName, ContactName, Address, City, PostalCode,	Country)
+VALUES ('C', 'The Shire', 'Bilbo Baggins', '1 Hobbit Hole', 'Bag End', '111', 'Middle Earth')
 
 -- Update Bilbo Baggins record so that the postal code changes to "11122"
 
